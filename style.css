@@ -773,7 +773,7 @@ main .modal {
 @media (max-width: 425px){
     nav .menu.open{
         display: flex;
-        right: 0.75rem;
+        right: 0;
     }
 
     main article {
