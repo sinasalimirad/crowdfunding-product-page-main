@@ -777,7 +777,7 @@ main .modal {
 
     nav .menu.open{
         display: flex;
-        right: 0;
+        right: 0.5rem;
     }
 
     main article {
