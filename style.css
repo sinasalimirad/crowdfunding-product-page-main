@@ -50,6 +50,12 @@ h2 {
     font-size: calc(var(--Paragraph) * 1.5);
 }
 
+header {
+    background: url(images/image-hero-desktop.jpg), no-repeat center center/cover;
+    height: 400px;
+    width: 100%;
+}
+
 /* ========== Navbar ========== */
 nav {
     position: absolute;
@@ -604,6 +610,12 @@ main .modal {
 
 /* ========== Breakpoint ========== */
 @media (max-width: 748px) {
+    header {
+        background: url(images/image-hero-mobile.jpg), no-repeat center center/cover;
+        height: 600px;
+        width: 100%;
+    }
+
     nav {
         padding: 3rem;
     }
@@ -637,6 +649,7 @@ main .modal {
         background-color: var(--Moderate-cyan);
         transition: background-color 0.3s ease;
     }
+
     .title > div button:first-child {
         padding: 1rem 4.5rem;
     }
@@ -754,5 +767,27 @@ main .modal {
    
     .options .submit button {
         padding: 0.25rem 2rem;
+    }
+}
+
+@media (max-width: 425px){
+    nav .menu.open{
+        display: flex;
+        right: 1.5rem;
+    }
+
+    main article {
+        padding: 0 2rem;
+        width: 375px;
+        text-align: center;
+    }
+
+    .title > div button:first-child {
+        padding: 1rem 3rem;
+    }
+
+    .title > div button[bookmark] {
+        padding: 1rem;
+        width: 0;
     }
 }
