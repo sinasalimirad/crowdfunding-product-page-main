@@ -1,0 +1,758 @@
+/* ========== Google font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+/* ========== Variable ========== */
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 94%);
+    --Dark-gray: hsl(0, 0%, 48%);
+    --Moderate-cyan: hsl(176, 50%, 47%);
+    --Dark-cyan: hsl(176, 72%, 28%);
+    --Black: hsl(0, 0%, 0%);
+    --Shadow: rgba(122, 122, 122, 0.3);
+    --Paragraph: 16px;
+    --Radius: 8px;
+}
+
+/* ========== Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    background-color: var(--Light-gray);
+    overflow-x: hidden;
+    position: relative;
+    max-width: 1440px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    font-family: 'Commissioner', sans-serif;
+}
+
+button {
+    font-family: 'Commissioner', sans-serif;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: calc(var(--Paragraph) * 1.5);
+}
+
+/* ========== Navbar ========== */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1440px;
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--Black), transparent);
+}
+
+nav .nav-items {
+    font-size: calc(var(--Paragraph) * 0.8);
+    font-weight: 400;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav .nav-items a {
+    color: var(--White);
+}
+
+nav [menuToggle] {
+    display: none;
+    cursor: pointer;
+}
+
+nav .menu {
+    position: absolute;
+    top: 100%;
+    right: 6rem;
+    display: none;
+    background-color: var(--White);
+    border-radius: 8px;
+    width: 375px;
+}
+
+nav .menu li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav .menu li a {
+    line-height: 2rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    color: var(--Black);
+    transition: background-color 0.2s ease;
+}
+
+nav .menu li a:hover {
+    background-color: var(--Light-gray);
+}
+
+nav .menu li a:not(:last-child) {
+    border-bottom: 1px solid var(--Shadow);
+}
+
+nav .menu li a:first-child {
+    border-top-right-radius: var(--Radius);
+    border-top-left-radius: var(--Radius);
+}
+
+nav .menu li a:last-child {
+    border-bottom-right-radius: var(--Radius);
+    border-bottom-left-radius: var(--Radius);
+}
+
+/* ========== Main ========== */
+main {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    transform: translateY(-5.5rem);
+}
+
+main article {
+    border-radius: var(--Radius);
+    padding: 0 3rem;
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+}
+
+main article.title {
+    align-items: center;
+    gap: 1rem;
+}
+
+main .title img {
+    transform: translateY(-50%);
+}
+
+main .title > p {
+    font-size: calc(var(--Paragraph) * 0.9);
+}
+
+main .title p {
+    color: var(--Dark-gray);
+}
+main .title > div {
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title > div button {
+    font-weight: 700;
+    font-size: calc(var(--Paragraph) * 0.8);
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.title > div button:first-child {
+    padding: 1rem 2rem;
+    color: var(--White);
+    background-color: var(--Moderate-cyan);
+    transition: background-color 0.3s ease;
+}
+
+.title > div button:first-child:hover {
+    background-color: var(--Dark-cyan);
+}
+
+.title > div button[bookmark] {
+    padding: 1rem;
+    width: 130px;
+    background-color: var(--Light-gray);
+    text-align: end;
+    position: relative;
+}
+
+.title > div button.bookmark {
+    width: 140px;
+}
+
+.title > div button[bookmark] svg {
+    position: absolute;
+    top: -4px;
+    left: -8px;
+    border-radius: 1.5rem;
+    scale: 0.85;
+}
+
+.title > div button[bookmark]:not(.bookmark):hover svg circle {
+    fill: var(--Dark-gray);
+}
+
+.title > div button[bookmark]:hover svg path {
+    fill: var(--White);
+}
+
+.title > div button.bookmark svg circle {
+    fill: var(--Dark-cyan);
+}
+
+.title > div button.bookmark svg path {
+    fill: var(--White);
+}
+
+.title > div button.bookmark p {
+    color: var(--Dark-cyan);
+}
+
+main .status {
+    padding: 3rem;
+    gap: 2.5rem;
+}
+
+main .status > div {
+    display: flex;
+    width: 100%;
+}
+
+.status .col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: calc(650px / 3);
+}
+
+.status .col:not(:first-child) {
+    padding-left: 2rem;
+    margin-left: 2rem;
+    border-left: 1px solid var(--Shadow);
+}
+
+.status .col .number {
+    font-size: calc(var(--Paragraph) * 1.75);
+    font-weight: 700;
+}
+
+.status .col .text {
+    color: var(--Dark-gray);
+    font-size: calc(var(--Paragraph) * 0.8);
+    font-weight: 500;
+}
+
+.status .progress-bar {
+    width: 100%;
+    height: 0.75rem;
+    border-radius: 1.5rem;
+    background-color: var(--Light-gray);
+}
+
+.status .progress-bar .complete {
+    height: 100%;
+    width: 82%;
+    border-radius: 1.5rem;
+    background-color: var(--Moderate-cyan);
+}
+
+main .modal {
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.modal h2 {
+    font-size: calc(var(--Paragraph) * 1.125);
+}
+
+.modal > p {
+    color: var(--Dark-gray);
+    line-height: 1.6rem;
+    font-size: calc(var(--Paragraph) * 0.875);
+    font-weight: 500;
+}
+
+.modal .modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal .modal-options .option {
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--Shadow);
+    border-radius: var(--Radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal .modal-options .option > p {
+    color: var(--Dark-gray);
+}
+
+.modal .modal-options .option.disable {
+    color: var(--Dark-gray);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.modal .modal-options .option.disable button {
+    background-color: var(--Dark-gray);
+}
+
+.modal .modal-options .option p {
+    font-size: calc(var(--Paragraph) * 0.875);
+    line-height: 1.5rem;
+}
+
+.modal .modal-options .option .title,
+.modal .modal-options .option .more-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .modal-options .option .title .price {
+    color: var(--Moderate-cyan);
+    font-weight: 500;
+}
+
+.modal .modal-options .option .more-detail .days-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-options .option .more-detail .days-left .days {
+    font-size: calc(var(--Paragraph) * 1.75);
+    font-weight: 700;
+}
+
+.modal-options .option .more-detail .days-left .left {
+    color: var(--Dark-gray);
+}
+
+.modal-options .option .more-detail button {
+    padding: 0.75rem 1.5rem;
+    font-size: calc(var(--Paragraph) * 0.8);
+    font-weight: 500;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--Moderate-cyan);
+    color: var(--White);
+    transition: background-color 0.3s ease;
+}
+
+.modal-options .option .more-detail button:hover {
+    background-color: var(--Dark-cyan);
+}
+
+/* ========== Modals ========== */
+.modals,
+.modal-completed {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--Shadow);
+    display: none;
+}
+
+.modals.show,
+.modal-completed.show {
+    display: block;
+}
+
+.modals > div,
+.modal-completed > div {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: var(--White);
+    border-radius: var(--Radius);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.modals > div {
+    max-width: 650px;
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+/* Works on Chrome, Edge, and Safari */
+.modals > div::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modals > div::-webkit-scrollbar-track {
+    background: var(--White);
+}
+  
+.modals > div::-webkit-scrollbar-thumb {
+    background-color: var(--Dark-gray);
+}
+
+.modals img {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.modals h4 {
+    font-size: calc(var(--Paragraph) * 1.5);
+}
+
+.modals .options {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--Shadow);
+    border-radius: 8px;
+}
+
+.modals div .title {
+    font-size: calc(var(--Paragraph) * 0.9);
+    color: var(--Dark-gray);
+    padding-bottom: 1rem;
+}
+
+.modals .modals-radios {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.modals .modals-radios .head {
+    display: flex;
+    gap: 1rem;
+}
+
+.modals .modals-radios label {
+    font-size: calc(var(--Paragraph) * 0.95);
+    display: grid;
+    grid-template-columns: 2rem auto;
+    gap: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2rem;
+    cursor: pointer;
+}
+
+.modals .modals-radios .pledge {
+    font-size: calc(var(--Paragraph) * 0.95);
+    font-weight: 700;
+    color: var(--Moderate-cyan);
+}
+
+.modals .modals-radios .days-left {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.modals .modals-radios .days-left .days {
+    font-weight: 700;
+}
+
+.modals .modals-radios .days-left .left {
+    font-size: calc(var(--Paragraph) * 0.9);
+    color: var(--Dark-gray);
+}
+
+.modals .modals-radios .content {
+    padding-left: 2.5rem;
+    padding-top: 1rem;
+    font-size: calc(var(--Paragraph) * 0.8);
+    line-height: 1.5rem;
+    color: var(--Dark-gray);
+}
+
+.options .submit {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-top: 1px solid var(--Shadow);
+    align-items: center;
+}
+
+.options .submit > div {
+    display: flex;
+    gap: 1rem;
+}
+
+.options .submit p {
+    font-size: calc(var(--Paragraph) * 0.85);
+    color: var(--Dark-gray);
+    font-weight: 700;
+}
+
+.options .submit label {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--Shadow);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.options .submit label input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    margin: 0;
+    font-size: calc(var(--Paragraph) * 0.9);
+    font-weight: 700;
+    color: var(--Black);
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.options .submit label input::-webkit-outer-spin-button,
+.options .submit label input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.options .submit button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--Moderate-cyan);
+    color: var(--White);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.options .submit button:hover {
+    background-color: var(--Dark-cyan);
+}
+
+/* ========== Modal Completed ========== */
+.modal-completed {
+    display: none;
+}
+
+.modal-completed.popUp {
+    display: flex;
+}
+
+.modal-completed > div {
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 425px;
+}
+
+.modal-completed h6 {
+    font-size: calc((var(--Paragraph) * 1.25));
+    font-weight: 700;
+    padding-top: 1rem;
+}
+
+.modal-completed p {
+    color: var(--Dark-gray);
+    font-size: calc(var(--Paragraph) * 0.8);
+    line-height: 1.5rem;
+}
+
+.modal-completed button {
+    padding: 0.75rem 1.75rem;
+    background-color: var(--Moderate-cyan);
+    font-size: calc(var(--Paragraph) * 0.8);
+    font-weight: 500;
+    color: var(--White);
+    border: none;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.modal-completed button:hover {
+    background-color: var(--Dark-cyan);
+}
+
+/* ========== Breakpoint ========== */
+@media (max-width: 748px) {
+    nav {
+        padding: 3rem;
+    }
+
+    nav .nav-items {
+        display: none;
+    }
+
+    nav [menuToggle] {
+        display: block;
+    }
+
+    nav .menu.open{
+        display: flex;
+        right: 3rem;
+    }
+
+    main article {
+        padding: 0 3rem;
+        width: 425px;
+        text-align: center;
+    }
+
+    main article.title {
+        padding: 0 4rem;
+    }
+
+    .title > div button:first-child {
+        padding: 1rem 2rem;
+        color: var(--White);
+        background-color: var(--Moderate-cyan);
+        transition: background-color 0.3s ease;
+    }
+    .title > div button:first-child {
+        padding: 1rem 4.5rem;
+    }
+
+    .title > div button[bookmark] {
+        padding: 1rem;
+        width: 0;
+    }
+
+    .title > div button p {
+        display: none;
+    }
+
+    main .status > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .status .col {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .status .col:not(:first-child) {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .status .col .number {
+        padding-top: 2rem;
+    }
+
+    .status .col .text {
+        position: relative;
+    }
+
+    .status .col:not(:last-child) .text:after {
+        content: '';
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 50%;
+        transform: translateX(50%);
+        width: 75px;
+        height: 1px;
+        background-color: var(--Shadow);
+    }
+
+    .status .progress-bar {
+        width: 100%;
+        height: 1rem;
+        border-radius: 1.5rem;
+        background-color: var(--Light-gray);
+    }
+
+    .modal {
+        align-items: start;
+        text-align: start;
+    }
+
+    .modal .modal-options .option .title {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .modal .modal-options .option .more-detail {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .modal-options .option .more-detail button {
+        width: 150px;
+        padding: 1rem;
+    }
+
+    .modals > div {
+        max-width: 450px;
+        padding: 2rem;
+    }
+
+    .modals div .title {
+        font-size: calc(var(--Paragraph) * 1.05);
+        line-height: 2rem;
+    }
+
+    .modals .modals-radios .head {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .modals .modals-radios .content {
+        padding: 1rem 0.5rem;
+        font-size: calc(var(--Paragraph) * 1);
+    }
+
+    .modals .modals-radios .pledge {
+        font-size: calc(var(--Paragraph) * 0.95);
+        font-weight: 500;
+        padding-left: 2.5rem;
+    }
+
+    .modals .modals-radios .days-left {
+        top: calc(100% - 2rem);
+        right: calc(100% - 5rem);
+    }
+
+    .options .submit label input {
+        width: 3rem;
+    }
+
+    .options .submit {
+        flex-direction: column;
+        gap: 1rem;
+    }
+   
+    .options .submit button {
+        padding: 0.25rem 2rem;
+    }
+}
