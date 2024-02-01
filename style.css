@@ -771,6 +771,10 @@ main .modal {
 }
 
 @media (max-width: 425px){
+    nav {
+        padding: 3rem 1rem;
+    }
+
     nav .menu.open{
         display: flex;
         right: 0;
